@@ -1,6 +1,6 @@
 package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.homework.olympics;
 
-public interface IFeedingStrategy {
+public interface FeedingStrategy {
 
 	/**
 	 * returns whether or not the current feeding zone a hamster is situated on should be used.

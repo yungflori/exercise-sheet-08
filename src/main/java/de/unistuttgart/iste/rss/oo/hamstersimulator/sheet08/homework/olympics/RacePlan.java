@@ -1,6 +1,6 @@
 package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.homework.olympics;
 
-public interface IRacePlan {
+public interface RacePlan {
 	
 	/**
 	 * executes the next movement of the given hamster according to this race plan

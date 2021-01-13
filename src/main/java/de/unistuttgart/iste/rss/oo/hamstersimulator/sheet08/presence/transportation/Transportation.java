@@ -3,7 +3,7 @@ package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.presence.transporta
 /**
  * A transportation method for people.
  */
-public interface ITransportation {
+public interface Transportation {
 	
 	/*@
 	  @ ensures \result > 0;

@@ -3,7 +3,7 @@ package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.presence.transporta
 /**
  * A public transportation method for people.
  */
-public abstract class PublicTransportation implements ITransportation {
+public abstract class PublicTransportation implements Transportation {
 	//@ private instance invariant transportationMethodName != null;
 		
 	private final String transportationMethodName;

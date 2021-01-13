@@ -55,10 +55,10 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 		RunnerHamster steadyRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		RunnerHamster sprintingRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		
-		IRacePlan tacticSteady = new RunSteadilyRacePlan();
+		RacePlan tacticSteady = new RunSteadilyRacePlan();
 		steadyRunner.setRacePlan(tacticSteady);
 		
-		IRacePlan tacticSprinting = new SprinterRacePlan();
+		RacePlan tacticSprinting = new SprinterRacePlan();
 		sprintingRunner.setRacePlan(tacticSprinting);
 		
 		runners.add(steadyRunner);
@@ -73,13 +73,13 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 		RunnerHamster steadyRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		RunnerHamster sprintingRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		
-		IRacePlan tacticSteady = new RunSteadilyRacePlan();
-		IFeedingStrategy tacticFeedOnce = new FeedOnceStrategy();
+		RacePlan tacticSteady = new RunSteadilyRacePlan();
+		FeedingStrategy tacticFeedOnce = new FeedOnceStrategy();
 		steadyRunner.setRacePlan(tacticSteady);
 		steadyRunner.setFeedingTactics(tacticFeedOnce);
 		
-		IRacePlan tacticSprinting = new SprinterRacePlan();
-		IFeedingStrategy tacticFeedTwice = new FeedTwiceStrategy();
+		RacePlan tacticSprinting = new SprinterRacePlan();
+		FeedingStrategy tacticFeedTwice = new FeedTwiceStrategy();
 		sprintingRunner.setRacePlan(tacticSprinting);
 		sprintingRunner.setFeedingTactics(tacticFeedTwice);
 		

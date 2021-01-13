@@ -13,8 +13,8 @@ import de.unistuttgart.iste.rss.oo.hamstersimulator.external.model.Territory;
  */
 public class RunnerHamster extends Hamster {
 	// the strategies this runner follows during the race
-	protected IRacePlan runningTactics;
-	protected IFeedingStrategy feedingTactics;
+	protected RacePlan runningTactics;
+	protected FeedingStrategy feedingTactics;
 
 	private int energyRemaining;
 	private int stepsTaken;
@@ -115,11 +115,11 @@ public class RunnerHamster extends Hamster {
 		move();
 	}
 
-	public void setRacePlan(IRacePlan tactics) {
+	public void setRacePlan(RacePlan tactics) {
 		this.runningTactics = tactics;
 	}
 
-	public void setFeedingTactics(IFeedingStrategy tactics) {
+	public void setFeedingTactics(FeedingStrategy tactics) {
 		this.feedingTactics = tactics;
 	}
 	

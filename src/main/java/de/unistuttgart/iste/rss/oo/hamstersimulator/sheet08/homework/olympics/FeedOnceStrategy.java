@@ -1,6 +1,6 @@
 package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.homework.olympics;
 
-public class FeedOnceStrategy implements IFeedingStrategy {
+public class FeedOnceStrategy implements FeedingStrategy {
 	private boolean hasUsedThisStation = false;
 
 	@Override

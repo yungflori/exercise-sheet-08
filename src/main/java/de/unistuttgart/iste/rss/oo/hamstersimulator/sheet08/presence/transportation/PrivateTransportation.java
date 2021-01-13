@@ -3,7 +3,7 @@ package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.presence.transporta
 /**
  * A private transportation method for people.
  */
-public abstract class PrivateTransportation implements ITransportation {
+public abstract class PrivateTransportation implements Transportation {
 	//@ private instance invariant registrationNumber != null;
 		
 	private final String registrationNumber;
