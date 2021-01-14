@@ -13,96 +13,121 @@ import de.unistuttgart.iste.rss.oo.hamstersimulator.external.model.Territory;
  */
 public class RunnerHamster extends Hamster {
 	// the strategies this runner follows during the race
-	protected RacePlan runningTactics;
-	protected FeedingStrategy feedingTactics;
+	protected RacePlan runningTactic;
+	protected FeedingStrategy feedingTactic;
 
 	private int energyRemaining;
-	private int stepsTaken;
+	private int actionsTaken;
 
 	public RunnerHamster(final Territory territory, final Location location, final Direction direction) {
 		super(territory, location, direction, 0);
 		
 		this.energyRemaining = 20;
-		this.stepsTaken = 0;
-		this.feedingTactics = new FeedNeverStrategy();
-		this.runningTactics = new RunSlowlyRacePlan();
+		this.actionsTaken = 0;
+		this.feedingTactic = new FeedNeverStrategy();
+		this.runningTactic = new RunSlowlyRacePlan();
 	}
 
 	/**
-	 * moves the hamster toward the finish line thrice at a cost of three energy
+	 * Moves the hamster toward the finish line thrice at a cost of three energy
 	 * points
+	 * This method requires the hamster to still have at least three energy points.
+	 * It ensures that the hamster moves and turns in such a way that after execution it is three tiles 
+	 * closer to the finish line on any given valid race course.
+	 * The hamster also gets deducted three energy points.
 	 */
 	public void runHard() {
+		if(energyRemaining < 3)
+			throw new IllegalStateException("There are not enough energy points left to do this.");
 		energyRemaining -= 3;
 		for (int i = 0; i < 3; i++) {
 			moveForward();
 		}
 	}
 
-	/*
-	 * moves the hamster toward the finish line twice at a cost of a single energy
-	 * point
+	/**
+	 * Moves the hamster toward the finish line twice at a cost of a single energy
+	 * point.
+	 * This method requires the hamster to still have at least one energy point.
+	 * It ensures that the hamster moves and turns in such a way that after execution it is two tiles 
+	 * closer to the finish line on any given valid race course.
+	 * The hamster also gets deducted an energy point.
 	 */
 	public void runSteadily() {
+		if(energyRemaining < 1)
+			throw new IllegalStateException("There are not enough energy points left to do this.");
 		energyRemaining -= 1;
 		for (int i = 0; i < 2; i++) {
 			moveForward();
 		}
 	}
 
-	/*
-	 * moves the hamster toward the finish line at no cost of energy
+	/**
+	 * Moves the hamster toward the finish line at no cost of energy
+	 * This method ensures that the hamster moves and turns in such a way that after execution  it is one tile 
+	 * closer to the finish line on any given valid race course.
 	 */
 	public void runSlowly() {
 		moveForward();
 	}
 
-	/*
-	 * causes the hamster to make use of the food and trink at a feeding zone
+	/**
+	 * Causes the hamster to make use of the food and drink at a feeding zone
 	 * regenerating five energy points
+	 * This method requires the hamster to be situated on a feeding zone (check by calling isAtFeedingZone()
+	 * beforehand).
+	 * It ensures that the hamster picks up a grain and has an additional five energy points afer execution.
 	 */
 	public void useFeedZone() {
+		if(!grainAvailable())
+			throw new IllegalStateException("You are not standing at a feed zone!");
 		pickGrain();
 		energyRemaining += 5;
 	}
 
-	/*
-	 * returns the amount of energy points this hamster has
+
+	/**
+	 * Returns the amount of energy points this hamster has left at the moment.
 	 */
 	public int getEnergyRemaining() {
 		return this.energyRemaining;
 	}
 
-	/*
-	 * returns whether or not this hamster has finished the race and finds himself
+	/**
+	 * Returns whether or not this hamster has finished the race and finds himself
 	 * in the finishers zone
 	 */
 	public boolean hasFinished() {
 		return (getLocation().getRow() >= 10 && getLocation().getColumn() > 5 && getLocation().getColumn() < 10);
 	}
 
-	/*
-	 * returns whether or not this hamster finds himself at a feeding zone
+	/**
+	 * Returns whether or not this hamster is situated on a feeding zone
 	 */
 	public boolean isAtFeedZone() {
 		return grainAvailable();
 	}
-
-	/*
-	 * executes the next step in this hamster's race, according to his racing
-	 * strategies
+	
+	/**
+	 * Executes the next action in this hamster's race, according to his racing
+	 * strategies, either using a feed zone or running on
+	 * This method requires both feedingTactic and runningTactic to be initialized.
+	 * It ensures that the hamster executes the next Step of either feedingTactic
+	 * or runningTactic and increments the actionsTaken counter.
 	 */
-	public void executeStep() {
-		if (isAtFeedZone() && feedingTactics.isFeedingRequired()) {
+	public void executeNextAction() {
+		if (isAtFeedZone() && feedingTactic.isFeedingRequired()) {
 			useFeedZone();
 		} else {
-			runningTactics.nextStep(this);
+			runningTactic.nextStep(this);
 		}
-		this.stepsTaken++;
+		this.actionsTaken++;
 	}
 
-	/*
-	 * moves the hamster toward the finish line once
+	/**
+	 * Moves the hamster toward the finish line once
+	 * This method ensures that the hamster turns and moves in such a way that the hamster
+	 * is exactly one tile closer to the finish line after execution.
 	 */
 	private void moveForward() {
 		if (!frontIsClear()) {
@@ -115,15 +140,27 @@ public class RunnerHamster extends Hamster {
 		move();
 	}
 
+	/**
+	 * Sets this hamsters RacePlan to tactics
+	 * @param tactics the new RacePlan
+	 */
 	public void setRacePlan(RacePlan tactics) {
-		this.runningTactics = tactics;
+		this.runningTactic = tactics;
 	}
 
+
+	/**
+	 * Sets this hamsters FeedingStrategy to tactics
+	 * @param tactics the new FeedingStrategy
+	 */
 	public void setFeedingTactics(FeedingStrategy tactics) {
-		this.feedingTactics = tactics;
+		this.feedingTactic = tactics;
 	}
 	
-	public int getStepsTaken() {
-		return this.stepsTaken;
+	/**
+	 * Returns the amount of times executeNextAction() has been called on this hamster
+	 */
+	public int getActionsTaken() {
+		return this.actionsTaken;
 	}
 }

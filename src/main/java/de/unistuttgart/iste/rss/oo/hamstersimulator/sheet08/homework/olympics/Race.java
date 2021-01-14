@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import de.unistuttgart.iste.rss.oo.hamstersimulator.datatypes.Location;
+
 /**
  * this class represents a race of RunnerHamsters
  * call executeRace() to run the race from start to finish
@@ -13,10 +15,14 @@ public class Race {
 
 	private final List<RunnerHamster> runners;
 	private final List<RunnerHamster> finishers;
+	private final List<RunnerHamster> didNotFinishRunners;
+	
+	private final Location startLocation = new Location(1,1);
 	
 	public Race(List<RunnerHamster> competitors) {
 		this.runners = competitors;
 		finishers = new ArrayList<RunnerHamster>();
+		didNotFinishRunners = new ArrayList<RunnerHamster>();
 	}
 	
 	/**
@@ -37,12 +43,17 @@ public class Race {
 		Iterator<RunnerHamster> it = runners.iterator();
 		while(it.hasNext()) {
 			RunnerHamster currentRunner = it.next();
-			currentRunner.executeStep();
+			currentRunner.executeNextAction();
 			
 			if(currentRunner.hasFinished()) {
 				it.remove();
 				finishers.add(currentRunner);
-				currentRunner.write("Ich habe " + currentRunner.getStepsTaken() + " Aktionen gebraucht!");
+				currentRunner.write("Ich habe " + currentRunner.getActionsTaken() + " Aktionen gebraucht!");
+			}
+			if(currentRunner.getLocation().equals(startLocation)) {
+				it.remove();
+				didNotFinishRunners.add(currentRunner);
+				currentRunner.write("Ich habe es leider nicht bis ins Ziel geschafft.");
 			}
 			
 		}

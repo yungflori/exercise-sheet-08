@@ -37,13 +37,13 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 		
 		// put your code for task (e) between here
 		while(!speedy.hasFinished()) {
-			speedy.executeStep();
+			speedy.executeNextAction();
 		}
 		
 		// end here
 		
 		if(speedy.hasFinished())
-			speedy.write("Ich habe " + speedy.getStepsTaken() + " gebraucht!");
+			speedy.write("Ich habe " + speedy.getActionsTaken() + " Aktionen gebraucht!");
 	}
 
 	/**
