@@ -3,9 +3,9 @@ package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.homework.olympics;
 import java.util.LinkedList;
 import java.util.List;
 
-import de.unistuttgart.iste.rss.oo.hamstersimulator.datatypes.Direction;
-import de.unistuttgart.iste.rss.oo.hamstersimulator.datatypes.Location;
-import de.unistuttgart.iste.rss.oo.hamstersimulator.external.model.SimpleHamsterGame;
+import de.hamstersimulator.objectsfirst.datatypes.Direction;
+import de.hamstersimulator.objectsfirst.datatypes.Location;
+import de.hamstersimulator.objectsfirst.external.model.SimpleHamsterGame;
 
 
 public class OlympicsHamsterGame extends SimpleHamsterGame {

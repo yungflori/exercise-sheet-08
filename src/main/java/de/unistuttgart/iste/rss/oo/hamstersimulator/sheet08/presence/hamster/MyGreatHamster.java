@@ -1,9 +1,9 @@
 package de.unistuttgart.iste.rss.oo.hamstersimulator.sheet08.presence.hamster;
 
-import de.unistuttgart.iste.rss.oo.hamstersimulator.datatypes.Direction;
-import de.unistuttgart.iste.rss.oo.hamstersimulator.datatypes.Location;
-import de.unistuttgart.iste.rss.oo.hamstersimulator.external.model.Hamster;
-import de.unistuttgart.iste.rss.oo.hamstersimulator.external.model.Territory;
+import de.hamstersimulator.objectsfirst.datatypes.Direction;
+import de.hamstersimulator.objectsfirst.datatypes.Location;
+import de.hamstersimulator.objectsfirst.external.model.Hamster;
+import de.hamstersimulator.objectsfirst.external.model.Territory;
 
 /**
  * A great hamster who can do more than a normal hamster.

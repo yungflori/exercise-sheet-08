@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import de.unistuttgart.iste.rss.oo.hamstersimulator.datatypes.Location;
+import de.hamstersimulator.objectsfirst.datatypes.Location;
 
 /**
  * this class represents a race of RunnerHamsters
