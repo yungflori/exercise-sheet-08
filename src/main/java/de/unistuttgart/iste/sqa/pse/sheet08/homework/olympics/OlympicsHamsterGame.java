@@ -5,7 +5,7 @@ import java.util.List;
 
 import de.hamstersimulator.objectsfirst.datatypes.Direction;
 import de.hamstersimulator.objectsfirst.datatypes.Location;
-import de.hamstersimulator.objectsfirst.external.model.SimpleHamsterGame;
+import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 
 
 public class OlympicsHamsterGame extends SimpleHamsterGame {

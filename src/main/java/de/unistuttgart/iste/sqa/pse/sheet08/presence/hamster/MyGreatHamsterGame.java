@@ -2,7 +2,7 @@ package de.unistuttgart.iste.sqa.pse.sheet08.presence.hamster;
 
 import de.hamstersimulator.objectsfirst.datatypes.Direction;
 import de.hamstersimulator.objectsfirst.datatypes.Location;
-import de.hamstersimulator.objectsfirst.external.model.SimpleHamsterGame;
+import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 
 
 /**
