@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>de.unistuttgart.iste.rss.oo.hamstersimulator</groupId>
-	<artifactId>exercise-sheet-8</artifactId>
-	<name>Exercise Sheet 8</name>
+	<groupId>de.unistuttgart.iste.sqa.pse.sheet08</groupId>
+	<artifactId>exercise-sheet-08</artifactId>
+	<name>Exercise Sheet 08</name>
     <version>1.0.0</version>
 
 	<properties>
@@ -41,7 +41,7 @@
 						</configuration>
 					</execution>
 					<execution>
-						<id>OlympicHamsterGameApp</id>
+						<id>OlympicsHamsterGameApp</id>
 						<configuration>
 							<mainClass>de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics.OlympicsHamsterGameApp</mainClass>
 						</configuration>
