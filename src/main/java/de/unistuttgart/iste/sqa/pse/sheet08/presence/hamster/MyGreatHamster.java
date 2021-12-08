@@ -13,17 +13,4 @@ public class MyGreatHamster {
         				  final Direction direction, final int newGrainCount) {
 		
 	}
-	
-	public void turnRight() {
-		
-	}
-	
-	public void multiMove(final int steps) {
-		
-	}
-	
-	public void pickAllGrains() {
-		
-	}
-
 }
