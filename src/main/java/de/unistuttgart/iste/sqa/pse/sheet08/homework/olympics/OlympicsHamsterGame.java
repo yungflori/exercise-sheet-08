@@ -8,7 +8,7 @@ import de.hamstersimulator.objectsfirst.datatypes.Location;
 import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 
 
-public class OlympicsHamsterGame extends SimpleHamsterGame {
+public final class OlympicsHamsterGame extends SimpleHamsterGame {
 	List<RunnerHamster> runners;
 
 	public OlympicsHamsterGame() {
@@ -20,20 +20,24 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 
 	@Override
 	protected void run() {
-		paule.write("Willkommen zum ersten Rennen des Tages!");
+		paule.write("Welcome to the first race of the day!");
 		setupTaskC();
 		race();
 		
-		paule.write("Und nun folgt das zweite Rennen!");
+		paule.write("And now for the second race!");
 		setupTaskD();
 		race();
 		
-		paule.write("Zum Abschluss: Ein Weltrekordversuch! Kann Speedy heute den Rekord brechen?");
+		paule.write("To top it all off: Speedy`s attempt at beating the WORLD RECORD!");
 		recordAttempt();
 	}
-	
+
+	/**
+	 * Speedy runs the course in fewer than 30 turns
+	 * @ensures speedy needed at most 30 actions to reach the goal
+	 */
 	private void recordAttempt() {
-		RunnerHamster speedy = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
+		final RunnerHamster speedy = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		
 		// put your code for task (e) between here
 		while(!speedy.hasFinished()) {
@@ -42,23 +46,26 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 		
 		// end here
 		
-		if(speedy.hasFinished())
-			speedy.write("Ich habe " + speedy.getActionsTaken() + " Aktionen gebraucht!");
+		if(speedy.hasFinished()) {
+			speedy.write("I needed " + speedy.getActionsTaken() + " actions!");
+		}
 	}
 
 	/**
 	 * sets up the runners to take part in a race with strategies as implemented in task (c)
+	 * @ensures a steady runner and a sprinting runner both on the tile (1,1) and
+	 * facing east have been added to the runners list with their respective race strategies
 	 */
 	private void setupTaskC() {
 		runners = new LinkedList<RunnerHamster>();
 		
-		RunnerHamster steadyRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
-		RunnerHamster sprintingRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
+		final RunnerHamster steadyRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
+		final RunnerHamster sprintingRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		
-		RacePlan tacticSteady = new RunSteadilyRacePlan();
+		final RacePlan tacticSteady = new RunSteadilyRacePlan();
 		steadyRunner.setRacePlan(tacticSteady);
 		
-		RacePlan tacticSprinting = new SprinterRacePlan();
+		final RacePlan tacticSprinting = new SprinterRacePlan();
 		sprintingRunner.setRacePlan(tacticSprinting);
 		
 		runners.add(steadyRunner);
@@ -67,19 +74,21 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 	
 	/**
 	 * sets up the runners to take part in a race with strategies as implemented in task (d)
+	 * @ensures a steady runner and a sprinting runner both on the tile (1,1) and
+	 * facing east have been added to the runners list with their respective race and feeding strategies
 	 */
 	private void setupTaskD() {
 		runners = new LinkedList<RunnerHamster>();
-		RunnerHamster steadyRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
-		RunnerHamster sprintingRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
+		final RunnerHamster steadyRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
+		final RunnerHamster sprintingRunner = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 		
-		RacePlan tacticSteady = new RunSteadilyRacePlan();
-		FeedingStrategy tacticFeedOnce = new FeedOnceStrategy();
+		final RacePlan tacticSteady = new RunSteadilyRacePlan();
+		final FeedingStrategy tacticFeedOnce = new FeedOnceStrategy();
 		steadyRunner.setRacePlan(tacticSteady);
 		steadyRunner.setFeedingTactics(tacticFeedOnce);
 		
-		RacePlan tacticSprinting = new SprinterRacePlan();
-		FeedingStrategy tacticFeedTwice = new FeedTwiceStrategy();
+		final RacePlan tacticSprinting = new SprinterRacePlan();
+		final FeedingStrategy tacticFeedTwice = new FeedTwiceStrategy();
 		sprintingRunner.setRacePlan(tacticSprinting);
 		sprintingRunner.setFeedingTactics(tacticFeedTwice);
 		
@@ -89,9 +98,10 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 	
 	/**
 	 * runs a race with the competitors currently in runners
+	 * @ensures a new race has been executed
 	 */
 	private void race() {
-		Race race = new Race(runners);
+		final Race race = new Race(runners);
 		race.executeRace();
 	}
 }

@@ -11,7 +11,7 @@ import de.hamstersimulator.objectsfirst.external.model.Territory;
  * handles the energy management. Each hamster starts out with 20 energy points,
  * every move at more than slow speed costs some of these.
  */
-public class RunnerHamster extends Hamster {
+public final class RunnerHamster extends Hamster {
 	// the strategies this runner follows during the race
 	protected RacePlan runningTactic;
 	protected FeedingStrategy feedingTactic;
@@ -40,6 +40,10 @@ public class RunnerHamster extends Hamster {
 		if(energyRemaining < 3)
 			throw new IllegalStateException("There are not enough energy points left to do this.");
 		energyRemaining -= 3;
+		/*@
+		@  loop_invariant moves forward i times
+		@  @decreasing 3 - i
+		@*/
 		for (int i = 0; i < 3; i++) {
 			moveForward();
 		}
@@ -54,9 +58,14 @@ public class RunnerHamster extends Hamster {
 	 * The hamster also gets deducted an energy point.
 	 */
 	public void runSteadily() {
-		if(energyRemaining < 1)
+		if(energyRemaining < 1) {
 			throw new IllegalStateException("There are not enough energy points left to do this.");
+		}
 		energyRemaining -= 1;
+		/*@
+		@  loop_invariant moves forward i times
+		@  @decreasing 2 - i
+		@*/
 		for (int i = 0; i < 2; i++) {
 			moveForward();
 		}
@@ -79,8 +88,9 @@ public class RunnerHamster extends Hamster {
 	 * It ensures that the hamster picks up a grain and has an additional five energy points afer execution.
 	 */
 	public void useFeedZone() {
-		if(!grainAvailable())
+		if(!grainAvailable()) {
 			throw new IllegalStateException("You are not standing at a feed zone!");
+		}
 		pickGrain();
 		energyRemaining += 5;
 	}
@@ -144,7 +154,7 @@ public class RunnerHamster extends Hamster {
 	 * Sets this hamsters RacePlan to tactics
 	 * @param tactics the new RacePlan
 	 */
-	public void setRacePlan(RacePlan tactics) {
+	public void setRacePlan(final RacePlan tactics) {
 		this.runningTactic = tactics;
 	}
 
@@ -153,7 +163,7 @@ public class RunnerHamster extends Hamster {
 	 * Sets this hamsters FeedingStrategy to tactics
 	 * @param tactics the new FeedingStrategy
 	 */
-	public void setFeedingTactics(FeedingStrategy tactics) {
+	public void setFeedingTactics(final FeedingStrategy tactics) {
 		this.feedingTactic = tactics;
 	}
 	

@@ -8,5 +8,5 @@ public interface RacePlan {
 	 * RunnerHamster hamster gets called.
 	 * @param hamster the hamster that executed this race plan
 	 */
-	public void nextStep(RunnerHamster hamster);
+	void nextStep(final RunnerHamster hamster);
 }

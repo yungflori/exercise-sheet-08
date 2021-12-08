@@ -11,7 +11,7 @@ import de.hamstersimulator.objectsfirst.datatypes.Location;
  * call executeRace() to run the race from start to finish
  *
  */
-public class Race {
+public final class Race {
 
 	private final List<RunnerHamster> runners;
 	private final List<RunnerHamster> finishers;
@@ -19,7 +19,7 @@ public class Race {
 	
 	private final Location startLocation = new Location(1,1);
 	
-	public Race(List<RunnerHamster> competitors) {
+	public Race(final List<RunnerHamster> competitors) {
 		this.runners = competitors;
 		finishers = new ArrayList<RunnerHamster>();
 		didNotFinishRunners = new ArrayList<RunnerHamster>();
@@ -35,25 +35,25 @@ public class Race {
 		}
 	}
 	
-	/*
+	/**
 	 * runs a single time step of the race, consisting of one round of steps from each of the competitors
 	 * that are still on the course
 	 */
 	private void executeStep() {
 		Iterator<RunnerHamster> it = runners.iterator();
 		while(it.hasNext()) {
-			RunnerHamster currentRunner = it.next();
+			final RunnerHamster currentRunner = it.next();
 			currentRunner.executeNextAction();
 			
 			if(currentRunner.hasFinished()) {
 				it.remove();
 				finishers.add(currentRunner);
-				currentRunner.write("Ich habe " + currentRunner.getActionsTaken() + " Aktionen gebraucht!");
+				currentRunner.write("I needed " + currentRunner.getActionsTaken() + " actions!");
 			}
 			if(currentRunner.getLocation().equals(startLocation)) {
 				it.remove();
 				didNotFinishRunners.add(currentRunner);
-				currentRunner.write("Ich habe es leider nicht bis ins Ziel geschafft.");
+				currentRunner.write("I didn't make it to the goal :(");
 			}
 			
 		}
