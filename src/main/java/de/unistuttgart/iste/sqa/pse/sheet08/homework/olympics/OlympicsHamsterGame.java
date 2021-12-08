@@ -42,8 +42,9 @@ public class OlympicsHamsterGame extends SimpleHamsterGame {
 		
 		// end here
 		
-		if(speedy.hasFinished())
+		if(speedy.hasFinished()) {
 			speedy.write("Ich habe " + speedy.getActionsTaken() + " Aktionen gebraucht!");
+		}
 	}
 
 	/**
