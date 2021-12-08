@@ -18,6 +18,7 @@ public class MyGreatHamsterGame extends SimpleHamsterGame {
 	
 	@Override
 	protected void run() {
+		//DO NOT MODIFY
 		Location greatPauleLocation = new Location(2, 1);
 		MyGreatHamster greatPaule = new MyGreatHamster(game.getTerritory(), greatPauleLocation, Direction.EAST, 0);
 		
