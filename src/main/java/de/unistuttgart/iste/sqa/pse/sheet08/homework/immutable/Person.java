@@ -7,29 +7,29 @@ import java.util.Date;
  */
 public class Person {
 	//@ private instance invariant name != null && name.length() > 0;
-	//@ private instance invariant birthDate != null;
+	//@ private instance invariant age >= ;
 	
 	public String name;
-	public Date birthDate;
+	public int age;
 	
 	/*@
 	  @ requires name != null && name.length() > 0;
-	  @ requires birthDate != null;
+	  @ requires age >= 0;
 	  @ ensures this.name == name;
-	  @ ensures this.birthDate == birthDate;
+	  @ ensures this.age == age;
 	  @*/
 	/**
 	 * Creates a new person with the given name.
 	 * @param name Name of the person.
-	 * @param birthDate Birth date of the person.
+	 * @param age Birth date of the person.
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
-	public Person(final String name, final Date birthDate) throws IllegalArgumentException {
-		if (name == null || name.length() == 0 || birthDate == null) {
+	public Person(final String name, final int age) throws IllegalArgumentException {
+		if (name == null || name.length() == 0 || age < 0) {
 			throw new IllegalArgumentException("A person may not have a null or empty name, and their birth date must not be null.");
 		}
 		this.name = name;
-		this.birthDate = birthDate;
+		this.age = age;
 	}
 	
 	/*@
@@ -43,13 +43,13 @@ public class Person {
 	}
 	
 	/*@
-	  @ ensures \result == birthDate;
+	  @ ensures \result == age;
 	  @*/
 	/**
 	 * @return This person's birth date.
 	 */
-	public /*@ pure @*/ Date getBirthDate() {
-		return birthDate;
+	public /*@ pure @*/ int getAge() {
+		return age;
 	}
 	
 	/*@
@@ -69,19 +69,19 @@ public class Person {
 	}
 	
 	/*@
-	  @ requires birthDate != null;
-	  @ ensures this.birthDate == birthDate;
+	  @ requires age >= 0;
+	  @ ensures this.age == age;
 	  @*/
 	/**
 	 * Sets this person's birth date.
-	 * @param birthDate The new birth date.
+	 * @param age The new birth date.
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
-	public void setBirthDate(final Date birthDate) throws IllegalArgumentException {
-		if (birthDate == null) {
-			throw new IllegalArgumentException("A person's birth date may not be null.");
+	public void setAge(final int age) throws IllegalArgumentException {
+		if (age < 0) {
+			throw new IllegalArgumentException("A person's birth date may not be less than zero.");
 		}
-		this.birthDate = birthDate;
+		this.age = age;
 	}
 	
 }
