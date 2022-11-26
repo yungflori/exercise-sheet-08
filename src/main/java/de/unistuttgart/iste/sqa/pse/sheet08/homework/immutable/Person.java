@@ -1,35 +1,34 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.immutable;
 
-import java.util.Date;
-
+import java.util.*;
 /**
- * Represents a person with a name and birth date.
+ * Represents a person with a name and parents.
  */
 public class Person {
 	//@ private instance invariant name != null && name.length() > 0;
-	//@ private instance invariant age >= ;
+	//@ private instance invariant parenstsName >= ;
 	
 	public String name;
-	public int age;
+	public List<Person> parentsName;
 	
 	/*@
 	  @ requires name != null && name.length() > 0;
-	  @ requires age >= 0;
+	  @ requires parentsName != null &&  parentsName.size() <= 2
 	  @ ensures this.name == name;
-	  @ ensures this.age == age;
+	  @ ensures this.parentsName == parentsName;
 	  @*/
 	/**
 	 * Creates a new person with the given name.
 	 * @param name Name of the person.
-	 * @param age Birth date of the person.
+	 * @param parentsName Names of parents of this person
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
-	public Person(final String name, final int age) throws IllegalArgumentException {
-		if (name == null || name.length() == 0 || age < 0) {
-			throw new IllegalArgumentException("A person may not have a null or empty name, and their birth date must not be null.");
+	public Person(final String name, final List<Person> parentsName) throws IllegalArgumentException {
+		if (name == null || name.length() == 0 || parentsName == null || parentsName.size() < 3 ) {
+			throw new IllegalArgumentException("A person may not have a null or empty name, and parents must not be null nor be there more than 2 parents");
 		}
 		this.name = name;
-		this.age = age;
+		this.parentsName = parentsName;
 	}
 	
 	/*@
@@ -43,13 +42,13 @@ public class Person {
 	}
 	
 	/*@
-	  @ ensures \result == age;
+	  @ ensures \result == parents;
 	  @*/
 	/**
-	 * @return This person's birth date.
+	 * @return This person's parents.
 	 */
-	public /*@ pure @*/ int getAge() {
-		return age;
+	public /*@ pure @*/ List<Person> getParentsName() {
+		return parentsName;
 	}
 	
 	/*@
@@ -69,19 +68,19 @@ public class Person {
 	}
 	
 	/*@
-	  @ requires age >= 0;
-	  @ ensures this.age == age;
+	  @ requires parents != null && parentsName.size() <= 2;
+	  @ ensures this.parents == parents;
 	  @*/
 	/**
-	 * Sets this person's birth date.
-	 * @param age The new birth date.
+	 * Sets this person's Age.
+	 * @param parents The new parents.
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
-	public void setAge(final int age) throws IllegalArgumentException {
-		if (age < 0) {
-			throw new IllegalArgumentException("A person's birth date may not be less than zero.");
+	public void setParentsName(final List<Person> parentsName) throws IllegalArgumentException {
+		if (parentsName == null || parentsName.size() > 3) {
+			throw new IllegalArgumentException("A pesons parents can never be null nor be there more than 2 parents ");
 		}
-		this.age = age;
+		this.parentsName = parentsName;
 	}
 	
 }
