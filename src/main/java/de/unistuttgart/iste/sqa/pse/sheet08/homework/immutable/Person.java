@@ -69,10 +69,10 @@ public class Person {
 	
 	/*@
 	  @ requires parents != null && parentsName.size() <= 2;
-	  @ ensures this.parents == parents;
+	  @ ensures this.parentsName == parentsName;
 	  @*/
 	/**
-	 * Sets this person's Age.
+	 * Sets this person's parents names .
 	 * @param parents The new parents.
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
