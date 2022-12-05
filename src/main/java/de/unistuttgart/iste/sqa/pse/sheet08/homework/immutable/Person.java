@@ -24,7 +24,7 @@ public class Person {
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
 	public Person(final String name, final List<Person> parentsName) throws IllegalArgumentException {
-		if (name == null || name.length() == 0 || parentsName == null || parentsName.size() < 3 ) {
+		if (name == null || name.length() == 0 || parentsName == null || parentsName.size() >= 3 ) {
 			throw new IllegalArgumentException("A person may not have a null or empty name, and parents must not be null nor be there more than 2 parents");
 		}
 		this.name = name;
