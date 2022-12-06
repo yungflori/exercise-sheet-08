@@ -6,5 +6,4 @@ public final class FeedTwiceStrategy implements FeedingStrategy {
 		// put code for task (d) here
 		return false;
 	}
-
 }

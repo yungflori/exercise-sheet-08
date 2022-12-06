@@ -1,7 +1,7 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
 public interface RacePlan {
-	
+
 	/**
 	 * Executes the next movement of the given hamster according to this race plan
 	 * This method ensures that exactly one of the methods runHard(), runSteadily or runSlowly of

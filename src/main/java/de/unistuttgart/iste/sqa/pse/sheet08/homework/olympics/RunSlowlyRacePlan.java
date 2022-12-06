@@ -6,5 +6,4 @@ public final class RunSlowlyRacePlan implements RacePlan {
 	public void nextStep(final RunnerHamster hamster) {
 		hamster.runSlowly();
 	}
-
 }

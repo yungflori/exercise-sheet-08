@@ -21,7 +21,7 @@ public final class RunnerHamster extends Hamster {
 
 	public RunnerHamster(final Territory territory, final Location location, final Direction direction) {
 		super(territory, location, direction, 0);
-		
+
 		this.energyRemaining = 20;
 		this.actionsTaken = 0;
 		this.feedingTactic = new FeedNeverStrategy();
@@ -32,13 +32,12 @@ public final class RunnerHamster extends Hamster {
 	 * Moves the hamster toward the finish line thrice at a cost of three energy
 	 * points
 	 * This method requires the hamster to still have at least three energy points.
-	 * It ensures that the hamster moves and turns in such a way that after execution it is three tiles 
+	 * It ensures that the hamster moves and turns in such a way that after execution it is three tiles
 	 * closer to the finish line on any given valid race course.
 	 * The hamster also gets deducted three energy points.
 	 */
 	public void runHard() {
-		if(energyRemaining < 3)
-			throw new IllegalStateException("There are not enough energy points left to do this.");
+		if (energyRemaining < 3) throw new IllegalStateException("There are not enough energy points left to do this.");
 		energyRemaining -= 3;
 		/*@
 		@  loop_invariant moves forward i times
@@ -53,12 +52,12 @@ public final class RunnerHamster extends Hamster {
 	 * Moves the hamster toward the finish line twice at a cost of a single energy
 	 * point.
 	 * This method requires the hamster to still have at least one energy point.
-	 * It ensures that the hamster moves and turns in such a way that after execution it is two tiles 
+	 * It ensures that the hamster moves and turns in such a way that after execution it is two tiles
 	 * closer to the finish line on any given valid race course.
 	 * The hamster also gets deducted an energy point.
 	 */
 	public void runSteadily() {
-		if(energyRemaining < 1) {
+		if (energyRemaining < 1) {
 			throw new IllegalStateException("There are not enough energy points left to do this.");
 		}
 		energyRemaining -= 1;
@@ -73,7 +72,7 @@ public final class RunnerHamster extends Hamster {
 
 	/**
 	 * Moves the hamster toward the finish line at no cost of energy
-	 * This method ensures that the hamster moves and turns in such a way that after execution  it is one tile 
+	 * This method ensures that the hamster moves and turns in such a way that after execution  it is one tile
 	 * closer to the finish line on any given valid race course.
 	 */
 	public void runSlowly() {
@@ -88,13 +87,12 @@ public final class RunnerHamster extends Hamster {
 	 * It ensures that the hamster picks up a grain and has an additional five energy points afer execution.
 	 */
 	public void useFeedZone() {
-		if(!grainAvailable()) {
+		if (!grainAvailable()) {
 			throw new IllegalStateException("You are not standing at a feed zone!");
 		}
 		pickGrain();
 		energyRemaining += 5;
 	}
-
 
 	/**
 	 * Returns the amount of energy points this hamster has left at the moment.
@@ -108,7 +106,9 @@ public final class RunnerHamster extends Hamster {
 	 * in the finishers zone
 	 */
 	public boolean hasFinished() {
-		return (getLocation().getRow() >= 10 && getLocation().getColumn() > 5 && getLocation().getColumn() < 10);
+		return (getLocation().getRow() >= 10
+				&& getLocation().getColumn() > 5
+				&& getLocation().getColumn() < 10);
 	}
 
 	/**
@@ -117,7 +117,7 @@ public final class RunnerHamster extends Hamster {
 	public boolean isAtFeedZone() {
 		return grainAvailable();
 	}
-	
+
 	/**
 	 * Executes the next action in this hamster's race, according to his racing
 	 * strategies, either using a feed zone or running on
@@ -158,7 +158,6 @@ public final class RunnerHamster extends Hamster {
 		this.runningTactic = tactics;
 	}
 
-
 	/**
 	 * Sets this hamsters FeedingStrategy to tactics
 	 * @param tactics the new FeedingStrategy
@@ -166,7 +165,7 @@ public final class RunnerHamster extends Hamster {
 	public void setFeedingTactics(final FeedingStrategy tactics) {
 		this.feedingTactic = tactics;
 	}
-	
+
 	/**
 	 * Returns the amount of times executeNextAction() has been called on this hamster
 	 */
