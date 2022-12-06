@@ -210,3 +210,5 @@ buildNumber.properties
 # Ignore code-workspaces
 *.code-workspace
 
+# Apple
+.DS_Store
