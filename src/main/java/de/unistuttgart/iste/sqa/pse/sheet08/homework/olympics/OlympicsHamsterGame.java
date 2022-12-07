@@ -6,6 +6,10 @@ import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 import java.util.LinkedList;
 import java.util.List;
 
+/*
+ * This class sets up the race 
+ */
+
 public final class OlympicsHamsterGame extends SimpleHamsterGame {
 	List<RunnerHamster> runners;
 
