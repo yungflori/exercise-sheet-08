@@ -33,17 +33,6 @@ Execute the -App classes of the corresponding exercise.
   ```
   so, for example:
   ```sh
-  mvn clean compile exec:java@ArtemisPauleHamsterGameApp
+  mvn clean compile exec:java@OlympicsHamsterGameApp
   ```
-  ```sh
-  mvn clean compile exec:java@PainterPauleHamsterGameApp
-  ```
-  ```sh
-  mvn clean compile exec:java@PainterPauleHamsterGameBApp
-  ```
-  ```sh
-  mvn clean compile exec:java@AmazingPauleHamsterGameApp
-  ```
-  ```sh
-  mvn clean compile exec:java@AmazingPauleHamsterGameBApp
-  ```
+ 
