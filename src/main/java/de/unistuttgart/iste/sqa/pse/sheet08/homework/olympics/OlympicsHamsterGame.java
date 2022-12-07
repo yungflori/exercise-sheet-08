@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /*
- * This class sets up the race 
+ * This class sets up the race
  */
 
 public final class OlympicsHamsterGame extends SimpleHamsterGame {

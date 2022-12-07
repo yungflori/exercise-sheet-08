@@ -5,7 +5,6 @@ package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
  * @author your name
  */
 
-
 public final class RunSteadilyRacePlan implements RacePlan {
 	@Override
 	public void nextStep(final RunnerHamster hamster) {
