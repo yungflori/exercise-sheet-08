@@ -75,7 +75,7 @@ public class Person {
 	@*/
 	/**
 	 * Sets this person's parents names .
-	 * @param parents The new parents.
+	 * @param parents The new parents name.
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
 	public void setParentsName(final List<String> parentsName) throws IllegalArgumentException {

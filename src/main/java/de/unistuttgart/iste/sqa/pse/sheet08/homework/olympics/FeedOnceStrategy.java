@@ -1,8 +1,8 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
+
 /*
  * Implements a Strategy in which the hamster feeds once
  * @author
- * @version
  */
 public final class FeedOnceStrategy implements FeedingStrategy {
 	@Override

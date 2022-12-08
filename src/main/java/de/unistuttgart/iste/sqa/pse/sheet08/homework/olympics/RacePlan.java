@@ -3,7 +3,6 @@ package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
  * Raceplan for a RunnerHamster
  *
  */
-
 public interface RacePlan {
 
 	/**
