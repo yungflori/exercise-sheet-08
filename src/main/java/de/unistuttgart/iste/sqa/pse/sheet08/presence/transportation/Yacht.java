@@ -6,8 +6,8 @@ package de.unistuttgart.iste.sqa.pse.sheet08.presence.transportation;
 public class Yacht extends PrivateTransportation {
 
 	/*@
-	  @ requires registrationNumber != null; 
-	  @*/
+	@ requires registrationNumber != null;
+	@*/
 	/**
 	 * Creates a new yacht object.
 	 * @param registrationNumber Registration number of the yacht.
@@ -15,7 +15,7 @@ public class Yacht extends PrivateTransportation {
 	public Yacht(String registrationNumber) {
 		super(registrationNumber);
 	}
-	
+
 	@Override
 	public int getTotalCapacity() {
 		return 10;
@@ -35,12 +35,11 @@ public class Yacht extends PrivateTransportation {
 	public float getSpeed() {
 		return 70;
 	}
-	
+
 	/**
 	 * @return The minimum water depth that can be safely navigated by this yacht, in meters.
 	 */
 	public float getMinimumWaterDepth() {
 		return 5;
 	}
-
 }

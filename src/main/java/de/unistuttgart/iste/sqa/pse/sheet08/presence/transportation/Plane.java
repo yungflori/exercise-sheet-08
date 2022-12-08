@@ -16,7 +16,7 @@ public final class Plane extends PublicTransportation {
 	public int getTotalCapacity() {
 		return 250;
 	}
-	
+
 	@Override
 	public float getSpeed() {
 		return 800f;
@@ -31,5 +31,4 @@ public final class Plane extends PublicTransportation {
 	public void printTransportationInfo() {
 		System.out.format("This plane can reach a speed up to " + this.getSpeed() + " km/h");
 	}
-
 }

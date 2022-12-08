@@ -26,12 +26,11 @@ public class Ferry extends PublicTransportation {
 	public float getSpeed() {
 		return 50;
 	}
-	
+
 	/**
 	 * @return The minimum water depth that can be safely navigated by this ferry, in meters.
 	 */
 	public float getMinimumWaterDepth() {
 		return 20;
 	}
-
 }

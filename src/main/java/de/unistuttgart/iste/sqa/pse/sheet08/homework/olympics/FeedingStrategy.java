@@ -1,5 +1,8 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
+/*
+ * Interface for a FeedingStrategy
+ */
 public interface FeedingStrategy {
 
 	/**
