@@ -10,7 +10,7 @@ public class Person {
 	// @ private instance invariant parenstsName >= ;
 
 	public String name;
-	public List<Person> parentsName;
+	public List<String> parentsName;
 
 	/*@
 	@ requires name != null && name.length() > 0;
@@ -24,7 +24,7 @@ public class Person {
 	 * @param parentsName Names of parents of this person
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
-	public Person(final String name, final List<Person> parentsName) throws IllegalArgumentException {
+	public Person(final String name, final List<String> parentsName) throws IllegalArgumentException {
 		if (name == null || name.length() == 0 || parentsName == null || parentsName.size() >= 3) {
 			throw new IllegalArgumentException(
 					"A person may not have a null or empty name, and parents must not be null nor be there more than 2 parents");
@@ -49,7 +49,7 @@ public class Person {
 	/**
 	 * @return This person's parents.
 	 */
-	public /*@ pure @*/ List<Person> getParentsName() {
+	public /*@ pure @*/ List<String> getParentsName() {
 		return parentsName;
 	}
 
@@ -78,7 +78,7 @@ public class Person {
 	 * @param parents The new parents.
 	 * @throws IllegalArgumentException If the preconditions are not satisfied.
 	 */
-	public void setParentsName(final List<Person> parentsName) throws IllegalArgumentException {
+	public void setParentsName(final List<String> parentsName) throws IllegalArgumentException {
 		if (parentsName == null || parentsName.size() > 3) {
 			throw new IllegalArgumentException("A pesons parents can never be null nor be there more than 2 parents ");
 		}
