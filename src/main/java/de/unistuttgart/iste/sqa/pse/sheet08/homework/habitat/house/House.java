@@ -10,13 +10,13 @@ import java.util.Set;
  */
 public final class House {
 
-    private final Set<Wall> walls;
+    private final Set<HouseWall> walls;
 
     /**
      * Get all the walls of the house.
      * @return walls of the house.
      */
-    public Set<Wall> getWalls() {
+    public Set<HouseWall> getWalls() {
         return walls;
     }
 
@@ -26,7 +26,8 @@ public final class House {
      * @return doors of the house.
      */
     public Set<Door> getDoors() {
-        return Set.of();
+    	// TODO implement 2 (e) here 
+        return Set.of(); // TODO remove this line if necessary.
     }
 
     /**
@@ -34,7 +35,7 @@ public final class House {
      *
      * @param walls walls of the new house.
      */
-    public House(final Set<Wall> walls) {
+    public House(final Set<HouseWall> walls) {
         if (walls == null || walls.isEmpty()) {
             throw new IllegalArgumentException("A house must have at least one wall, but there are none.");
         }
