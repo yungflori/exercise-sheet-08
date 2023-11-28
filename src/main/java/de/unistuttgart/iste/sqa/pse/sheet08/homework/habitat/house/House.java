@@ -28,7 +28,7 @@ public final class House {
      * @return doors of the house.
      */
     public Set<Door> getDoors() {
-    	// TODO implement 2 (e) here 
+		// TODO implement 2 (g) here
         return Set.of(); // TODO remove this line if necessary.
     }
 

@@ -1,11 +1,11 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.habitat.house;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import de.hamstersimulator.objectsfirst.datatypes.Location;
 import de.hamstersimulator.objectsfirst.external.model.Territory;
 import de.hamstersimulator.objectsfirst.external.model.TerritoryBuilder;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * This class is like the building company that builds the house.
@@ -104,7 +104,7 @@ public final class HouseBuilder {
      * @param wall the housewall to be put on the territory.
      */
     private void buildWall(final HouseWall wall) {
-		// TODO implement exercise 2 (d) here.
+		// TODO implement exercise 2 (e) here.
     }
 
     /**

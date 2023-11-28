@@ -19,9 +19,10 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 		TerritoryBuilder territoryBuilder = game.getNewTerritoryBuilder();
 
 
-		// TODO Implement exercise 2 (c) here
+		// TODO Implement exercise 2 (d) between here...
 
 
+		// ...and here. Do NOT put any code after here.
 		
 		
 		game.initialize(territoryBuilder);

@@ -1,8 +1,8 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.habitat.house;
 
-import de.hamstersimulator.objectsfirst.datatypes.Location;
-
 import java.util.Optional;
+
+import de.hamstersimulator.objectsfirst.datatypes.Location;
 
 /**
  * A wall in a {@link House}.
@@ -45,7 +45,7 @@ public final class HouseWall {
 	 * @param end   location of the wall's last part
 	 */
 	public HouseWall(final Location start, final Location end) {
-		// TODO implement exercise 2 (a) here.
+		// TODO implement exercise 2 (b) here.
 
 		this.start = start;
 		this.end = end;
@@ -64,7 +64,7 @@ public final class HouseWall {
 	 * @param newDoor door to be added into the housewall.
 	 */
 	public void addDoor(final Location newDoor) {
-		// TODO implement exercise 2 (b) here.
+		// TODO implement exercise 2 (c) here.
 	}
 
 	/**
