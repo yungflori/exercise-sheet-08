@@ -6,8 +6,8 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * this class represents a race of RunnerHamsters
- * call executeRace() to run the race from start to finish
+ * This class represents a race of RunnerHamsters.
+ * Call executeRace() to run the race from start to finish
  *
  */
 public final class Race {
