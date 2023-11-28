@@ -32,12 +32,6 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 
 	@Override
 	protected void run() {
-		paule.move();
-		paule.move();
-		paule.move();
 		
 	}
-	
-	
-
 }

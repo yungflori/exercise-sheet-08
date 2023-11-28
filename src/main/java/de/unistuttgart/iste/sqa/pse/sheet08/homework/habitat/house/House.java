@@ -6,6 +6,8 @@ import java.util.Set;
  * A house in the habitat game.
  *
  * A house consists of a least one wall and up to one door per wall.
+ * 
+ * @author (your name)
  *
  */
 public final class House {
