@@ -1,13 +1,16 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
-import de.hamstersimulator.objectsfirst.datatypes.Direction;
-import de.hamstersimulator.objectsfirst.datatypes.Location;
-import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 import java.util.LinkedList;
 import java.util.List;
 
+import de.hamstersimulator.objectsfirst.datatypes.Direction;
+import de.hamstersimulator.objectsfirst.datatypes.Location;
+import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
+
 /**
  * This class sets up the race
+ * 
+ * @author your name
  */
 public final class OlympicsHamsterGame extends SimpleHamsterGame {
 	List<RunnerHamster> runners;
