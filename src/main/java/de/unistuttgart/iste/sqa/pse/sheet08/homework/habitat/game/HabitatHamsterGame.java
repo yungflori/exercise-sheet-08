@@ -1,10 +1,8 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.habitat.game;
 
-
 import de.hamstersimulator.objectsfirst.external.model.TerritoryBuilder;
 import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
 import de.unistuttgart.iste.sqa.pse.sheet08.homework.habitat.house.House;
-
 
 /**
  * The habitat hamster game.
@@ -12,19 +10,16 @@ import de.unistuttgart.iste.sqa.pse.sheet08.homework.habitat.house.House;
 public final class HabitatHamsterGame extends SimpleHamsterGame {
 
 	private House house;
-	
+
 	public HabitatHamsterGame() {
 		this.loadTerritoryFromResourceFile("/territories/habitatTerritory.ter");
 
 		TerritoryBuilder territoryBuilder = game.getNewTerritoryBuilder();
 
-
 		// TODO Implement exercise 2 (d) between here...
 
-
 		// ...and here. Do NOT put any code after here.
-		
-		
+
 		game.initialize(territoryBuilder);
 		game.startGame();
 
@@ -40,7 +35,7 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 		paule.turnLeft();
 		multiMove(3);
 		checkDoor();
-		
+
 		multiMove(3);
 		paule.turnLeft();
 		multiMove(3);
@@ -65,7 +60,7 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 
 	/**
 	 * Paule checks whether he's standing next to a door.
-	 * 
+	 *
 	 * Ensure, that paule looks into the initial direction.
 	 */
 	private void checkDoor() {
@@ -78,16 +73,16 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 
 	/**
 	 * Paule move the given number of steps.
-	 * 
+	 *
 	 * Requires, that {@code numberOfSteps} in front of paule are clear.
-	 * 
+	 *
 	 * @param numberOfSteps number of steps to move
 	 */
 	private void multiMove(int numberOfSteps) {
 		/*@
-		 @ loop_invariant paule moved i steps
-		 @ decreasing numberOfSteps - i 
-		 @*/
+		@ loop_invariant paule moved i steps
+		@ decreasing numberOfSteps - i
+		@*/
 		for (int i = 0; i < numberOfSteps; i++) {
 			paule.move();
 		}

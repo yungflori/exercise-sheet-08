@@ -1,8 +1,8 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
 /**
- * TODO write documentation here. 
- * 
+ * TODO write documentation here.
+ *
  * @author your name
  */
 public final class RunSteadilyRacePlan implements RacePlan {

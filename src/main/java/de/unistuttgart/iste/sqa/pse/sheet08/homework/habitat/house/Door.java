@@ -8,6 +8,4 @@ import de.hamstersimulator.objectsfirst.datatypes.Location;
  *
  * @param position the position of the door.
  */
-public record Door(Location position) {
-
-}
+public record Door(Location position) {}

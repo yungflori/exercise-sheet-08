@@ -2,7 +2,7 @@ package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
 /**
  * executes the race
- * 
+ *
  * @author your name
  */
 public final class OlympicsHamsterGameApp {

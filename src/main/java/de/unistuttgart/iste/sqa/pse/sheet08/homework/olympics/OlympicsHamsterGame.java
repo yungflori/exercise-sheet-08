@@ -1,15 +1,14 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import de.hamstersimulator.objectsfirst.datatypes.Direction;
 import de.hamstersimulator.objectsfirst.datatypes.Location;
 import de.hamstersimulator.objectsfirst.external.simple.game.SimpleHamsterGame;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * This class sets up the race
- * 
+ *
  * @author your name
  */
 public final class OlympicsHamsterGame extends SimpleHamsterGame {
@@ -38,9 +37,9 @@ public final class OlympicsHamsterGame extends SimpleHamsterGame {
 
 	/**
 	 * Speedy runs the course in fewer than 30 turns.
-	 * 
-	 * To achieve this, speedy switches strategies during the race. 
-	 * 
+	 *
+	 * To achieve this, speedy switches strategies during the race.
+	 *
 	 * Ensures that speedy needed at most 30 actions to reach the goal.
 	 */
 	private void recordAttempt() {
@@ -51,7 +50,7 @@ public final class OlympicsHamsterGame extends SimpleHamsterGame {
 			speedy.executeNextAction();
 		}
 
-		// ...and here. Do NOT put any code after here. 
+		// ...and here. Do NOT put any code after here.
 
 		if (speedy.hasFinished()) {
 			speedy.write("I needed " + speedy.getActionsTaken() + " actions!");
@@ -60,13 +59,13 @@ public final class OlympicsHamsterGame extends SimpleHamsterGame {
 
 	/**
 	 * sets up the runners to take part in a race with strategies as implemented in task (c).
-	 * 
+	 *
 	 * Ensures that a steady runner and a sprinting runner both on the tile (1,1) and
 	 * facing east.
-	 * 
+	 *
 	 * The steady runner uses a {@code RunSteadilyRacePlan}.
 	 * The sprinting runner uses a {@code SprinterRacePlan}.
-	 * 
+	 *
 	 */
 	private void setupTaskC() {
 		runners = new LinkedList<RunnerHamster>();
@@ -87,12 +86,12 @@ public final class OlympicsHamsterGame extends SimpleHamsterGame {
 
 	/**
 	 * Sets up the runners to take part in a race with strategies as implemented in task (d).
-	 * 
+	 *
 	 * Ensures that a steady runner and a sprinting runner both on the tile (1,1) and
 	 * facing east.
 	 * The steady runner uses a {@code FeedOnceStrategy} and a {@code RunSteadilyRacePlan}.
 	 * The sprinting runner uses a {@code FeedTwiceStrategy} and a {@code SprinterRacePlan}.
-	 * 
+	 *
 	 */
 	private void setupTaskD() {
 		runners = new LinkedList<RunnerHamster>();
@@ -116,7 +115,7 @@ public final class OlympicsHamsterGame extends SimpleHamsterGame {
 
 	/**
 	 * runs a race with the competitors currently in runners.
-	 * 
+	 *
 	 * ensures that a new race has been executed
 	 */
 	private void race() {

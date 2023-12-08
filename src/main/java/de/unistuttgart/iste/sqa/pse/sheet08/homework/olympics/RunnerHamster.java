@@ -9,11 +9,11 @@ import de.hamstersimulator.objectsfirst.external.model.Territory;
  * This class represents a hamster that can take part in running events. It
  * provides all the necessary methods to navigate through a race course and
  * handles the energy management.
- * 
+ *
  * Each hamster starts out with 20 energy points. Running hard consumes three
  * energy points and running steadily consumes one energy point. Running slowly
  * consumes no energy points.
- * 
+ *
  */
 public final class RunnerHamster extends Hamster {
 	// the strategies this runner follows during the race
@@ -40,13 +40,12 @@ public final class RunnerHamster extends Hamster {
 	 * the hamster's energy point decrease by three.
 	 */
 	public void runHard() {
-		if (energyRemaining < 3)
-			throw new IllegalStateException("There are not enough energy points left to do this.");
+		if (energyRemaining < 3) throw new IllegalStateException("There are not enough energy points left to do this.");
 		energyRemaining -= 3;
 		/*@
-		 @ loop_invariant moves forward i times
-		 @ @decreasing 3 - i
-		 @*/
+		@ loop_invariant moves forward i times
+		@ @decreasing 3 - i
+		@*/
 		for (int i = 0; i < 3; i++) {
 			moveForward();
 		}
@@ -65,9 +64,9 @@ public final class RunnerHamster extends Hamster {
 		}
 		energyRemaining -= 1;
 		/*@
-		 @ loop_invariant moves forward i times
-		 @ @decreasing 2 - i
-		 @*/
+		@ loop_invariant moves forward i times
+		@ @decreasing 2 - i
+		@*/
 		for (int i = 0; i < 2; i++) {
 			moveForward();
 		}
@@ -109,7 +108,9 @@ public final class RunnerHamster extends Hamster {
 	 * in the finishers zone.
 	 */
 	public boolean hasFinished() {
-		return (getLocation().getRow() >= 10 && getLocation().getColumn() > 5 && getLocation().getColumn() < 10);
+		return (getLocation().getRow() >= 10
+				&& getLocation().getColumn() > 5
+				&& getLocation().getColumn() < 10);
 	}
 
 	/**
@@ -141,7 +142,7 @@ public final class RunnerHamster extends Hamster {
 
 	/**
 	 * Move one step towards the finish line.
-	 * 
+	 *
 	 * Ensures that the hamster turns and moves in such a way that the hamster is
 	 * exactly one tile closer to the finish line after execution.
 	 */
@@ -158,7 +159,7 @@ public final class RunnerHamster extends Hamster {
 
 	/**
 	 * Sets this hamsters RacePlan to tactics
-	 * 
+	 *
 	 * @param tactics the new RacePlan
 	 */
 	public void setRacePlan(final RacePlan tactics) {
@@ -167,7 +168,7 @@ public final class RunnerHamster extends Hamster {
 
 	/**
 	 * Sets this hamsters FeedingStrategy to tactics
-	 * 
+	 *
 	 * @param tactics the new FeedingStrategy
 	 */
 	public void setFeedingTactics(final FeedingStrategy tactics) {
