@@ -40,8 +40,6 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 		checkSouthernHouseWall();
 		checkEasternHouseWall();
 		checkNorthernHouseWall();
-
-		paule.write("Wuhu, my house looks good!");
 	}
 
 	/**
@@ -113,11 +111,11 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 	 *
 	 * @param direction direction to turn towards.
 	 */
-	private void turnTowards(Direction direction) {
+	private void turnTowards(final Direction direction) {
 		/*@
-		 @ loop_invariant paule turned once for each already executed loop iteration
-		 @ decreasing number of turns, until paule faces his initial direction again
-		 @*/
+		@ loop_invariant paule turned once for each already executed loop iteration
+		@ decreasing number of turns, until paule faces his initial direction again
+		@*/
 		while (paule.getDirection() != direction) {
 			paule.turnLeft();
 		}
@@ -155,11 +153,11 @@ public final class HabitatHamsterGame extends SimpleHamsterGame {
 	 *
 	 * @param lengthOfSegment length of the wall segment to check.
 	 */
-	private void checkWallSegments(int lengthOfSegment) {
+	private void checkWallSegments(final int lengthOfSegment) {
 		/*@
-		 @ loop_invariant paule moved i steps
-		 @ decreasing lengthOfSegment - i
-		 @*/
+		@ loop_invariant paule moved i steps
+		@ decreasing lengthOfSegment - i
+		@*/
 		for (int i = 0; i < lengthOfSegment; i++) {
 			paule.move();
 			paule.turnLeft();

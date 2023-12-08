@@ -45,7 +45,7 @@ public final class OlympicsHamsterGame extends SimpleHamsterGame {
 	private void recordAttempt() {
 		final RunnerHamster speedy = new RunnerHamster(game.getTerritory(), new Location(1, 1), Direction.EAST);
 
-		// put your code for task (e) between here...
+		// put your code for bonustask (f) between here...
 		while (!speedy.hasFinished()) {
 			speedy.executeNextAction();
 		}
