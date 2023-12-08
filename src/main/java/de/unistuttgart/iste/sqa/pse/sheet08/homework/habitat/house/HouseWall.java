@@ -55,8 +55,9 @@ public final class HouseWall {
 	 * Add a door into a house wall.
 	 *
 	 * Requires that {@code newDoor} is not null, and that {@code newDoor} is a
-	 * valid door according to the class' invariants. Additionally requires that the
-	 * housewall does not yet have a door, i.e. {@code this.door.isEmpty()}.
+	 * valid door according to the class' invariants. In addition, this operation
+	 * requires that the housewall does not yet have a door, i.e.
+	 * {@code this.door.isEmpty()}.
 	 *
 	 * Ensures that {@code this.door} is not empty.
 	 *
@@ -126,13 +127,15 @@ public final class HouseWall {
 	}
 
 	/**
-	 * Checks whether the given start location is closer to the origin than the end location.
+	 * Checks whether the given start location is closer to the origin than the end
+	 * location.
 	 * <p>
 	 * Requires that start and end are not null.
 	 *
 	 * @param start first tile of the wall
 	 * @param end   last tile of the wall
-	 * @return true iff the start location is closer to the origin than the end location.
+	 * @return true iff the start location is closer to the origin than the end
+	 *         location.
 	 */
 	private boolean isStartSmallerThanEnd(final Location start, final Location end) {
 		assert start != null && end != null;
@@ -220,12 +223,14 @@ public final class HouseWall {
 	}
 
 	/**
-	 * Checks whether the row of the end of the current wall is within the other wall.
+	 * Checks whether the row of the end of the current wall is within the other
+	 * wall.
 	 * <p>
 	 * Requires that otherWall is not null.
 	 *
 	 * @param otherWall another wall
-	 * @return true if the row of the end of the current wall is within the other wall, false otherwise.
+	 * @return true if the row of the end of the current wall is within the other
+	 *         wall, false otherwise.
 	 */
 	private boolean isEndRowWithinOtherWall(final HouseWall otherWall) {
 		assert otherWall != null;
@@ -234,12 +239,14 @@ public final class HouseWall {
 	}
 
 	/**
-	 * Checks whether the row of the start of the current wall is within the other wall.
+	 * Checks whether the row of the start of the current wall is within the other
+	 * wall.
 	 * <p>
 	 * Requires that otherWall is not null.
 	 *
 	 * @param otherWall another wall
-	 * @return true if the row of the start of the current wall is within the other wall, false otherwise.
+	 * @return true if the row of the start of the current wall is within the other
+	 *         wall, false otherwise.
 	 */
 	private boolean isStartRowWithinOtherWall(final HouseWall otherWall) {
 		assert otherWall != null;
@@ -276,12 +283,14 @@ public final class HouseWall {
 	}
 
 	/**
-	 * Checks whether the column of the end of the current wall is within the other wall.
+	 * Checks whether the column of the end of the current wall is within the other
+	 * wall.
 	 * <p>
 	 * Requires that otherWall is not null.
 	 *
 	 * @param otherWall another wall
-	 * @return true if the column of the end of the current wall is within the other wall, false otherwise.
+	 * @return true if the column of the end of the current wall is within the other
+	 *         wall, false otherwise.
 	 */
 	private boolean isEndColumnWithinOtherWall(final HouseWall otherWall) {
 		assert otherWall != null;
@@ -290,12 +299,14 @@ public final class HouseWall {
 	}
 
 	/**
-	 * Checks whether the column of the start of the current wall is within the other wall.
+	 * Checks whether the column of the start of the current wall is within the
+	 * other wall.
 	 * <p>
 	 * Requires that otherWall is not null.
 	 *
 	 * @param otherWall another wall
-	 * @return true if the column of the start of the current wall is within the other wall, false otherwise.
+	 * @return true if the column of the start of the current wall is within the
+	 *         other wall, false otherwise.
 	 */
 	private boolean isStartColumnWithinOtherWall(final HouseWall otherWall) {
 		assert otherWall != null;
