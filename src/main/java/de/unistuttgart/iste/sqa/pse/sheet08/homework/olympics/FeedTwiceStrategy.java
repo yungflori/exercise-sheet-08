@@ -1,9 +1,9 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
 /**
- * TODO write documentation here.
+ * Implements a strategy where the Hamster eats twice
  *
- * @author your name
+ * @author AmoresSchneyick
  */
 public final class FeedTwiceStrategy implements FeedingStrategy {
 	// if required, put attributes for task (d) here
