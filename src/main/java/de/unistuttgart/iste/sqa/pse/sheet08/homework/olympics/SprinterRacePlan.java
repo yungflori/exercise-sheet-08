@@ -1,14 +1,13 @@
 package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
 
 /**
- * TODO write documentation here.
+ * Implements a Race Plan in which the the RunnerHamster runs hard.
  *
- * @author your name
+ * @author AmoreSchneyinck
  */
 public final class SprinterRacePlan implements RacePlan {
 
 	@Override
 	public void nextStep(final RunnerHamster hamster) {
-		// put your code for task (c) here
-	}
+		hamster.runHard(); }
 }
