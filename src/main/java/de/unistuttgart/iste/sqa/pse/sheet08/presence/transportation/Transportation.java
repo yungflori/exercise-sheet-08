@@ -28,4 +28,5 @@ public interface Transportation {
 	 * @return The efficiency category of the current transportation method.
 	 */
 	public EfficiencyCategory getEfficiencyCategory();
+
 }
