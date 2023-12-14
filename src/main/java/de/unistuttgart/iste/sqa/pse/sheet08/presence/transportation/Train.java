@@ -61,4 +61,8 @@ public abstract class Train extends PublicTransportation {
 		System.out.println("The used transportation method has the transportation type " + this.getTransportationType()
 				+ " and the energy type " + energyType);
 	}
+
+	public EnergyType getEnergyType(){
+        return this.energyType;
+    }
 }

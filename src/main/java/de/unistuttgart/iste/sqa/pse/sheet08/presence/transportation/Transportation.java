@@ -28,4 +28,14 @@ public interface Transportation {
 	 * @return The efficiency category of the current transportation method.
 	 */
 	public EfficiencyCategory getEfficiencyCategory();
+
+	/*@
+	@ ensures \result != null;
+	@*/
+	/**
+	 * @return The energy type of the current transportation method
+	 */
+	public EnergyType getEnergyType();
 }
+
+
