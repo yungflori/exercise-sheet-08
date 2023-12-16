@@ -7,18 +7,16 @@ package de.unistuttgart.iste.sqa.pse.sheet08.homework.olympics;
  */
 public final class FeedTwiceStrategy implements FeedingStrategy {
 	// if required, put attributes for task (d) here
-	RunnerHamster hamster;
-	// if required, put attributes for task (d) here
+	int timesFed = 0;
 	@Override
 	public boolean isFeedingRequired() {
 		// put code for task (d) here
-		if (hamster.isAtFeedZone() && (hamster.getEnergyRemaining() <= 20)) {
-			hamster.useFeedZone();
-			hamster.useFeedZone();
+		if ((timesFed<2)) {
+			while (timesFed<2){
+				timesFed++;}
 			return true;
-		} else if (!hamster.isAtFeedZone() || !(hamster.getEnergyRemaining() <= 20)) {
-			return false;
-		} else {
+		}
+		else {
 			return false;
 		}
 	}
